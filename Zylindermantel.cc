@@ -13,7 +13,7 @@ Vektor Zylindermantel::punkt() {
   double phi = 2 * M_PI * rand() / (double)RAND_MAX;
   double z = l_ * (rand() / (double)RAND_MAX - 0.5);
 
-  double x = 0;
-  double y = 0;
+  double x = r_ * cos(phi);
+  double y = r_ * sin(phi);
   return Vektor(x, y, z);
 };
