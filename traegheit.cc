@@ -17,7 +17,7 @@ int main() {
   std::cout << "Richtung:";
   std::cin >> u;
 
-  std::unique_ptr<Vollzylinder> new Vollzylinder(ZM_R, ZM_L));
+  std::unique_ptr<Vollzylinder> zm(new Vollzylinder(ZM_R, ZM_L));
 
   double J = 0;     // Massentraegheitsmoment
   double m = M / N; // Masse eines Massenpunktes
@@ -30,7 +30,7 @@ int main() {
     double r = n.betrag()/u.betrag();
     std::cout << x << " :" << r << std::endl;
     // addiere Beitrag des Massenpunktes zum Traegheitsmoment
-    J += 0.5*m * r * r;
+    J += m * r * r;
   }
   std::cout << "Massentraegheitsmoment fuer einen Vollzylinder"
             << " mit a = " << a << " und u = " << u << ": " << J << std::endl;
